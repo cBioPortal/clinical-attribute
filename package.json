@@ -1,0 +1,27 @@
+{
+  "name": "clin_attr_table",
+  "version": "1.0.0",
+  "description": "A project to normalize header",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cBioPortal/clinical-attributes"
+  },
+  "keywords": [
+    "normalize",
+    "header"
+  ],
+  "author": "MSKCC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cBioPortal/clinical-attributes/issues"
+  },
+  "homepage": "https://github.com/cBioPortal/clinical-attributes",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "underscore": "^1.8.3"
+  }
+}

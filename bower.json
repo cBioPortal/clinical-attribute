@@ -1,0 +1,28 @@
+{
+  "name": "clin_attr_table",
+  "description": "A project to normalize header",
+  "main": "index.js",
+  "authors": [
+    "MSKCC"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "normalize",
+    "header"
+  ],
+  "homepage": "https://github.com/cBioPortal/clinical-attributes",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "datatables.net": "^1.10.12",
+    "datatables.net-dt": "^1.10.12",
+    "bootstrap": "^3.3.7",
+    "font-awesome-cdn": "^4.5.2"
+  }
+}

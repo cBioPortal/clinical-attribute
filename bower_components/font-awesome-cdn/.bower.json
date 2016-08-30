@@ -1,0 +1,37 @@
+{
+  "name": "font-awesome-cdn",
+  "description": "Font Awesome",
+  "keywords": [],
+  "homepage": "http://fontawesome.io",
+  "dependencies": {},
+  "devDependencies": {},
+  "license": [
+    "OFL-1.1",
+    "MIT",
+    "CC-BY-3.0"
+  ],
+  "main": [
+    "less/font-awesome.less",
+    "scss/font-awesome.scss"
+  ],
+  "ignore": [
+    "*/.*",
+    "*.json",
+    "src",
+    "*.yml",
+    "Gemfile",
+    "Gemfile.lock",
+    "*.md"
+  ],
+  "version": "4.5.2",
+  "_release": "4.5.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v4.5.2",
+    "commit": "e497d0ce6a447dc0060361cebdae88dd776cdf66"
+  },
+  "_source": "https://github.com/luciano-jr/Font-Awesome.git",
+  "_target": "^4.5.2",
+  "_originalSource": "font-awesome-cdn",
+  "_direct": true
+}

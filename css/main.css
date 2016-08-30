@@ -1,0 +1,15 @@
+tfoot input {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+}
+.sampleBG{
+    background-color: #e6ffe6;
+}
+.patientBG{
+    background-color: #ffe6e6;
+}
+.logoStyle{
+    width:20%;height:20%;
+    float:right
+}

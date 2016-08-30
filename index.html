@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="node_modules/underscore/underscore-min.js"></script>
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="bower_components/datatables.net-dt/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="bower_components/font-awesome-cdn/css/font-awesome.min.css">
+
+<script src="js/main.js"></script>
+<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+<div class="container">
+    <br/>
+    <img src="images/mskcc_logo_3d_grey.jpg" class="logoStyle"/>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home"><h3>Info</h3></a></li>
+        <li><a data-toggle="tab" href="#menu1"><h3>Table</h3></a></li>
+        <li><a data-toggle="tab" href="#menu2"><h3>Search</h3></a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <br/>
+            <div class="panel panel-primary">
+                <div class="panel-heading"><h2>Query for Clinical Attributes</h2></div>
+                <div class="panel-body">
+                    <ul>
+                        <p><b>cBioPortal</b> uses standard (normalized) header for each clinical attribute. For each clinical attribute in your clinical file, please look up its matched <b>NORMALIZED_COLUMN_HEADER</b> by Table or Search Tab and use this <b>NORMALIZED_COLUMN_HEADER</b> as your column header.</p>
+                        <p>For more details, please see below.  </p>
+                        <li><b>NORMALIZED_COLUMN_HEADER:</b> the header used for our system and clinical correlative excel templates</li>
+                        <li><b>DISPLAY_NAME:</b> the header shown in clinical table on the portal </li>
+                        <li><b>DESCRIPTIONS:</b> the clinical attribute descriptions when mouseover it </li>
+                        <li><b>DATATYPE:</b> the data format can be either text or number</li>
+                        <li><b>ATTRIBUTE_TYPE:</b> patient-based (ex. age or overall survival months) or sample-based (ex. specimen site)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="menu1" class="tab-pane fade">
+            <br/>
+            <table id="example" class="table table-bordered display" >
+                <thead>
+                <tr>
+                    <th>NORMALIZED_COLUMN_HEADER</th>
+                    <th>DISPLAY_NAME</th>
+                    <th>DESCRIPTIONS</th>
+                    <th>DATATYPE</th>
+                    <th>ATTRIBUTE_TYPE</th>
+                </tr>
+                </thead>
+                <tfoot>
+                <tr>
+                    <th>NORMALIZED_COLUMN_HEADER</th>
+                    <th>DISPLAY_NAME</th>
+                    <th>DESCRIPTIONS</th>
+                    <th>DATATYPE</th>
+                    <th>ATTRIBUTE_TYPE</th>
+                </tr>
+                </tfoot>
+            </table>
+            <br/><br/>
+        </div>
+        <div id="menu2" class="tab-pane fade">
+            <br/>
+            <div ng-app="myApp" ng-controller="customersCtrl" id="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Headers Input seperated with tab" ng-model="headers">
+                  <span class="input-group-btn">
+                    <button class="btn btn-secondary" type="button" ng-click="normalize()">Normalize</button>
+                  </span>
+                </div>
+                <br/>
+                <i ng-show="outputTable.length > 0">Note: Pink denotes patient based attribute and green denotes sample based attribute</i><br/><br/>
+                <i ng-show="search && outputTable.length === 0">There is no match for your headers input. Please refine your input and try again.</i>
+                <ul class="list-group">
+                    <li class="list-group-item" ng-class="x.type === 'PATIENT' ? 'patientBG' : (x.type === 'SAMPLE' ? 'sampleBG' : '')" ng-repeat="x in outputTable track by $index">>{{x.content}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+
+
+
+
+
